@@ -1,9 +1,8 @@
 module WirecardCheckoutPage
   class CheckedResponse
-    include WirecardCheckoutPage::Utils
 
     def initialize(params)
-      @params = stringify_keys(params).freeze
+      @params = params.stringify_keys.freeze
     end
 
     attr_reader :params

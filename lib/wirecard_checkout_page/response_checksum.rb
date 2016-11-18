@@ -2,10 +2,8 @@
 
 module WirecardCheckoutPage
   class ResponseChecksum
-    include WirecardCheckoutPage::Utils
-
     def initialize(params)
-      @params = stringify_keys(params)
+      @params = params.stringify_keys
       unless response_fingerprint_order_parts.include? 'secret'
         raise InvalidResponseFingerPrintOrder, 'Missing :secret as a part of the responseFingerprintOrder'
       end
