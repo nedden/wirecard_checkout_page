@@ -53,6 +53,7 @@ module WirecardCheckoutPage
     param :orderReference
     param :transactionIdentifier
     param :shopId
+    param :financialInstitution
 
     def fingerprint_order
       super + [:requestFingerprintOrder]
